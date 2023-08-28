@@ -47,6 +47,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 enable_testing()
 
 # 添加子目录
-add_subdirectory(src/01_sequence_list)
-add_subdirectory(src/02_linked_list)
-add_subdirectory(src/03_linear_list)
+add_subdirectory(src_220830/01_sequence_list)
+add_subdirectory(src_220830/02_linked_list)
+add_subdirectory(src_220830/03_linear_list)
+add_subdirectory(src_220830/04_binary_tree)

@@ -9,4 +9,3 @@ project(02_linked_list DESCRIPTION "链表")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/${PROJECT_NAME})
 
 add_executable(list list_test.c list.c)
-add_executable(list_advance list_advance_test.c list_advance.c)

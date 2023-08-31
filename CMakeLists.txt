@@ -3,11 +3,11 @@
 # Date   : 2022.09.04-15:06:17
 ]]
 
-cmake_minimum_required(VERSION 3.10.0)
+cmake_minimum_required(VERSION 3.10...3.20)
 
 project(
   Data_Structure
-  VERSION 1.0.0
+  VERSION 1.0.1
   DESCRIPTION "Data_Structure"
   HOMEPAGE_URL ""
   LANGUAGES C CXX)
@@ -47,8 +47,5 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 enable_testing()
 
 # 添加子目录
-add_subdirectory(src_220830/01_sequence_list)
-add_subdirectory(src_220830/02_linked_list)
-add_subdirectory(src_220830/03_linear_list)
-add_subdirectory(src_220830/04_binary_tree)
+add_subdirectory(src_220830)
 add_subdirectory(src_230830)

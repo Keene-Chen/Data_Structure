@@ -1,0 +1,125 @@
+/**
+ * @file    : list.h
+ * @author  : KeeneChen
+ * @date    : 2023.08.31-15:55:03
+ * @details : list
+ */
+
+#ifndef __LIST_H__
+#define __LIST_H__
+
+/* 插入模式 */
+#define HEAD_INSERT 1
+#define TAIL_INSERT 2
+
+/**
+ * 函数指针定义回调函数类型
+ * 用于用户输出和用户结构体比较
+ */
+typedef void llist_print(const void *data);
+typedef int llist_compare(const void *value1, const void *value2);
+
+/**
+ * 有效结点结构体
+ * ? 由于头结点数据源未使用可以使用变长结构体进行优化
+ * ? C99标准支持0字节的变长数组,用于定位地址,充当占位符的作用
+ * ? 也可以使用char data[1],但因为内存对齐还是占4个字节,所以在分配内存时应该减去
+ */
+struct llist_node_st {
+    struct llist_node_st *prev;
+    struct llist_node_st *next;
+    char data[0];
+};
+
+/* 带头链表结构体 */
+typedef struct llist_ops {
+    int size; // 存储有效结点需要内存分配大小
+    struct llist_node_st head;
+
+    // 面向对象进行结构体封装
+    int (*insert)(struct llist_ops *list, const void *data, int mode);
+    void *(*find)(struct llist_ops *list, void *key, llist_compare *compare);
+    int (*delete)(struct llist_ops *list, void *key, llist_compare *compare);
+    int (*fetch)(struct llist_ops *list, void *key, llist_compare *compare, void *data);
+    int (*travel)(struct llist_ops *list, llist_print *print_cb);
+    int (*get_size)(struct llist_ops *list);
+
+} LLIST;
+
+/**
+ * @brief  llist_create 创建带头结点管理的链表
+ * @param  int initsize 用户数据结构体大小
+ * @return LLIST *list 指向链表的指针
+ */
+LLIST *llist_create(int initsize);
+
+/**
+ * @brief  llist_destroy 销毁链表
+ * @param  LLIST *list 指向链表的指针
+ * @return void
+ */
+void llist_destroy(LLIST *list);
+
+/**
+ * @brief  llist_insert 链表插入有效结点
+ * @param  LLIST *list 指向链表的指针
+ * @param  const void *data 用户数据
+ * @param  int mode 插入模式
+ * @return int 插入是否成功
+ * @retval 0   插入成功
+ * @retval -1  插入失败
+ */
+// int llist_insert(LLIST *list, const void *data, int mode);
+
+/**
+ * @brief  llist_find 查找链表中的有效结点
+ * @param  LLIST *list 指向链表的指针
+ * @param  const void *key 待查找的值
+ * @param  llist_compare *compare 用户数据比较函数
+ * @return void* 是否查找到有效结点
+ * @retval NULL 未查找到
+ * @retval 非空  查找到
+ */
+// void *llist_find(LLIST *list, void *key, llist_compare *compare);
+
+/**
+ * @brief  llist_delete 删除链表中的有效结点
+ * @param  LLIST *list 指向链表的指针
+ * @param  const void *key 待删除的值
+ * @param  llist_compare *compare 用户数据比较函数
+ * @return int 删除是否成功
+ * @retval 0   删除成功
+ * @retval -1  删除失败
+ */
+// int llist_delete(LLIST *list, void *key, llist_compare *compare);
+
+/**
+ * @brief  llist_fetch 获取并删除链表中的有效结点
+ * @param  LLIST *list 指向链表的指针
+ * @param  const void *key 待删除的值
+ * @param  llist_compare *compare 用户数据比较函数
+ * @param  void *data 获取到的有效结点
+ * @return int 获取并删除是否成功
+ * @retval 0   获取并删除成功
+ * @retval -1  获取并删除失败
+ */
+// int llist_fetch(LLIST *list, void *key, llist_compare *compare, void *data);
+
+/**
+ * @brief  llist_travel 遍历链表中的有效结点
+ * @param  LLIST *list 指向链表的指针
+ * @param  llist_print *print_cb 用户打印函数
+ * @return int 遍历是否成功
+ * @retval 0   遍历成功
+ * @retval -1  遍历失败
+ */
+// int llist_travel(LLIST *list, llist_print *print_cb);
+
+/**
+ * @brief  llist_get_size 获取链表长度
+ * @param  LLIST *list 指向链表的指针
+ * @return int 链表长度
+ */
+// int llist_get_size(LLIST *list);
+
+#endif // __LIST_H__

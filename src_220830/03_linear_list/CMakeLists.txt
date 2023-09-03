@@ -6,7 +6,7 @@
 project(03_linear_list DESCRIPTION "线性表")
 
 # 设置可执行文件生成位置
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/${PROJECT_NAME})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/src_220830/${PROJECT_NAME})
 
 # queue
 add_executable(link_queue queue/link_queue_test.c queue/link_queue.c)

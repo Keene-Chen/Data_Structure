@@ -1,5 +1,5 @@
 /**
- * @file    : dynamic_array_test.c
+ * @file    : main.c
  * @author  : KeeneChen
  * @date    : 2023.08.24-18:13:42
  * @details : 测试动态数组,数据类型为char,int,struct

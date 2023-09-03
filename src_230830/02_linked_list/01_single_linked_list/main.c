@@ -1,8 +1,8 @@
 /**
- * @file    : linked_list_test.c
+ * @file    : main.c
  * @author  : KeeneChen
  * @date    : 2023.08.25-10:55:25
- * @details : linked_list_test
+ * @details : main
  */
 
 #include "single_linked_list.h"

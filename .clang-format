@@ -315,7 +315,7 @@ IndentGotoLabels: false
 # 66 缩进预处理器指令缩进样式
 # clang-format 6
 # enum: [None,AfterHash,BeforeHash]
-IndentPPDirectives: None
+IndentPPDirectives: AfterHash
 
 # 68 缩进模板中的 require 子句
 # clang-format 12-14
@@ -376,7 +376,7 @@ NamespaceIndentation: Inner
 
 # * 89 用于预处理器语句缩进的列数
 # clang-format 13
-# PPIndentWidth: -1
+PPIndentWidth: 1
 
 # 90 要使用的包构造函数初始值设定项样式
 # clang-format 14

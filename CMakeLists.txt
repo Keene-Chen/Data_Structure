@@ -14,9 +14,9 @@ project(
 
 # 包括 kc_config.cmake 模块,调用其中定义的宏
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-include(kc_config)
-add_kc_colors()
-add_kc_debug()
+include(kc_conf)
+enable_kc_colors()
+enable_kc_debug()
 
 # 开启测试
 enable_testing()

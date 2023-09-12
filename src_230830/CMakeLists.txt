@@ -44,3 +44,11 @@ aux_source_directory(04_queue/01_array_based seq_queue_source)
 aux_source_directory(04_queue/02_list_based list_queue_source)
 add_executable(14_seq_queue ${seq_queue_source})
 add_executable(15_list_queue ${list_queue_source})
+
+# 05_btree todo 二叉树搜索树 红黑树 最全二叉树 完全二叉树
+aux_source_directory(./05_btree/01_btree_recursion btree_source)
+add_executable(16_btree_recursion ${btree_source})
+aux_source_directory(./05_btree/02_level_travel level_travel_source)
+add_executable(17_level_travel ${level_travel_source})
+aux_source_directory(./05_btree/03_binary_search_tree btree_search_source)
+add_executable(18_btree_search ${btree_search_source})

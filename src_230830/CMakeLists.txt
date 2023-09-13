@@ -26,7 +26,8 @@ set(subdir
     08_double_circular_lib2
     09_double_circular_lib3
     10_double_circular_lib4
-    11_kernel_doubly_linked_list)
+    11_kernel_doubly_linked_list
+    12_single_merge)
 
 foreach(index ${subdir})
   aux_source_directory(${dir}/${index} ${index}_source)

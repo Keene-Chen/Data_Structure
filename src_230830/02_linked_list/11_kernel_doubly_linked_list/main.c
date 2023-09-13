@@ -53,5 +53,18 @@ int main(void)
         printf("name: %s, age: %d\n", pstu->name, pstu->age);
     }
 
+    struct list_head *fast = &head;
+    struct list_head *slow = &head;
+
+    while (fast && fast->next) {
+        fast = fast->next->next;
+        slow = slow->next;
+
+        if (fast == slow) {
+            printf("1\n");
+            break;
+        }
+    }
+
     return 0;
 }
